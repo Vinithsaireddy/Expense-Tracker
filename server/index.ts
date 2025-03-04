@@ -11,7 +11,11 @@ const PORT = 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret';
 const MONGO_URI = process.env.MONGO_URI || "" ;
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Allow only your frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // Allow cookies if needed
+}));
 app.use(express.json());
 
 // Connect to MongoDB
