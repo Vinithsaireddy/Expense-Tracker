@@ -23,7 +23,7 @@ if (!MONGO_URI) {
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow frontend access
+    origin: "https://expense-tracker-k4br.vercel.app", // Allow frontend access
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
