@@ -18,7 +18,7 @@ const MONGO_URI = process.env.MONGO_URI || "";
 
 app.use(
   cors({
-    origin: "https://expense-tracker-5crk-git-main-vinithsaireddys-projects.vercel.app", // Allow only your frontend
+    origin: "https://expense-tracker-k4br.vercel.app/register", // Allow only your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // Allow cookies if needed
   })
