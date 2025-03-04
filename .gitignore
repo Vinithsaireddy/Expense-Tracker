@@ -1,0 +1,14 @@
+# Node.js dependencies
+my-app/node_modules/
+server/node_modules/
+
+# Environment variables
+my-app/.env
+server/.env
+
+# Build outputs
+my-app/dist/
+server/build/
+
+# Logs
+logs/
