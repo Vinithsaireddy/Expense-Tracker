@@ -5,7 +5,8 @@ import { Toaster, toast } from "react-hot-toast";
 import { FaUserCircle, FaCaretDown } from "react-icons/fa";
 import "./Dashboard.css";
 import { jwtDecode } from "jwt-decode";
-import BACKEND_URL from "../config";
+
+const BACKEND_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();

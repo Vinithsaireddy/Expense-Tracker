@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Toaster, toast } from 'react-hot-toast';
 import "./LoginRegister.css"
 
+const BACKEND_URL = import.meta.env.VITE_API_BASE_URL;
+
 const Register: React.FC = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -14,7 +16,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/register', { username, email, password });
+      await axios.post(`${BACKEND_URL}/register`, { username, email, password });
       toast.success('Registration successful! Redirecting to login...', { duration: 2000 });
       setTimeout(() => navigate('/login'), 1500);
     } catch (error: any) {

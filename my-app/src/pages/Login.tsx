@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { Toaster, toast } from 'react-hot-toast';
 import "./LoginRegister.css"
 
+const BACKEND_URL = import.meta.env.VITE_API_BASE_URL;
+
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +17,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post(`${BACKEND_URL}/login`, { email, password });
       const token = response.data.token;
       localStorage.setItem('token', token);
       setUser(token);
